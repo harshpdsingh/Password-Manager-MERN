@@ -9,11 +9,11 @@ dotenv.config();
 const router = express.Router();
 
 // Trigger Google OAuth
-router.get("/google", passport.authenticate("google", { scope: ["email", "profile"] }));
+router.get("/auth/google", passport.authenticate("google", { scope: ["email", "profile"] }));
 
 // OAuth callback URL
 router.get(
-  "/google/callback",
+  "/auth/google/callback",
   passport.authenticate("google", { session: false }),
   (req, res) => {
     const token = jwt.sign(
@@ -31,10 +31,10 @@ router.get(
 );
 
 // GitHub OAuth
-router.get("/github", passport.authenticate("github", { scope: ["user:email"] }));
+router.get("/auth/github", passport.authenticate("github", { scope: ["user:email"] }));
 
 router.get(
-  "/github/callback",
+  "/auth/github/callback",
   passport.authenticate("github", { session: false }),
   (req, res) => {
     const token = jwt.sign(
