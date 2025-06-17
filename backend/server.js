@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(passport.initialize());
 
 // Routes
-app.use("/auth", authRoutes);
+app.use("/", authRoutes);
 app.use("/api/passwords", passwordRoutes);
 
 // MongoDB + Server Start
