@@ -15,11 +15,11 @@ const Login = () => {
   }, []);
 
   const handleGoogleLogin = () => {
-    window.location.href = "https://password-manager-mern-backend.onrender.com/auth/google";
+    window.location.href = "https://password-manager-mern-backend.onrender.com/auth";
   };
 
   const handleGitHubLogin = () => {
-    window.location.href = "https://password-manager-mern-backend.onrender.com/auth/github";
+    window.location.href = "https://password-manager-mern-backend.onrender.com/auth";
   };
 
   return (
