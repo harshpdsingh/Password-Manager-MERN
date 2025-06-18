@@ -28,7 +28,7 @@ const Login = () => {
     <div
       className="bg-blue-100 min-h-screen"
       style={{
-        backgroundImage: "url('/bg-image.png')",
+        backgroundImage: "url('/bg-image.webp')",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover", // or 'contain' depending on your need
         backgroundPosition: "center",
