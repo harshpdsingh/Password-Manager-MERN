@@ -1,6 +1,6 @@
 ## 🌍 Live Demo
 
-🔗 [Click here to view the live app](https://your-live-site-url.com)
+🔗 [Click here to view the live app](https://password-manager-mern-grom.onrender.com)
 
 
 # 🔐 Password Manager
