@@ -120,3 +120,7 @@ Ensure both servers are running concurrently.
 Feel free to fork the repository, raise issues, or submit PRs.
 
 ---
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
