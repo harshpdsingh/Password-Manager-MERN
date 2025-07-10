@@ -145,75 +145,80 @@ const Manager = () => {
         pauseOnHover
         theme="dark"
       />
-        {/* Background gradient */}
-        <div className="md:mycontainer md:px-40 md:py-4 m-16">
-          <h1 className="text-3xl text font-bold text-center">
-            <span className="text-blue-500"> &lt;</span>
+      {/* Background gradient */}
+      <div className="md:mycontainer md:px-40 md:py-4 m-16">
+        <h1 className="text-3xl text font-bold text-center">
+          <span className="text-blue-500"> &lt;</span>
 
-            <span className="text-white">Vault</span>
-            <span className="text-blue-500">Keeper / </span>
-            <span className="text-blue-500">&gt;</span>
-          </h1>
-          <p className="text-blue-500 text-lg text-center">
-            Your personal key to digital safety
-          </p>
-          <div className="flex flex-col p-4 text-white gap-8 items-center">
+          <span className="text-white">Vault</span>
+          <span className="text-blue-500">Keeper / </span>
+          <span className="text-blue-500">&gt;</span>
+        </h1>
+        <p className="text-blue-500 text-lg text-center">
+          Your personal key to digital safety
+        </p>
+        <div className="flex flex-col p-4 text-white gap-8 items-center">
+          <input
+            value={form.site}
+            onChange={handleChange}
+            placeholder="Enter website URL"
+            className="rounded-full border border-white w-full p-4 py-1"
+            type="text"
+            name="site"
+            id="site"
+          />
+          <div className="flex flex-col md:flex-row w-full justify-between gap-8">
             <input
-              value={form.site}
+              value={form.username}
               onChange={handleChange}
-              placeholder="Enter website URL"
+              placeholder="Enter Username"
               className="rounded-full border border-white w-full p-4 py-1"
               type="text"
-              name="site"
-              id="site"
+              name="username"
+              id="username"
             />
-            <div className="flex flex-col md:flex-row w-full justify-between gap-8">
+            <div className="relative">
               <input
-                value={form.username}
+                ref={passwordInput}
+                value={form.password}
                 onChange={handleChange}
-                placeholder="Enter Username"
+                placeholder="Enter Password"
                 className="rounded-full border border-white w-full p-4 py-1"
-                type="text"
-                name="username"
-                id="username"
+                type="password"
+                name="password"
+                id="password"
               />
-              <div className="relative">
-                  <input 
-                    ref={passwordInput}
-                    value={form.password}
-                    onChange={handleChange}
-                    placeholder="Enter Password"
-                    className="rounded-full border border-white w-full p-4 py-1"
-                    type="password"
-                    name="password"
-                    id="password"
-                  />
-                <span
-                  className="absolute right-[10px] top-[6px] cursor-pointer coptbtn z-10"
-                  onClick={showPassword}
-                >
-                  <img
-                    className="w-[22px] z-10 invert"
-                    ref={ref}
-                    src="icons/eye.png"
-                    alt="PasswordShowToggle"
-                  />
-                </span>
-              </div>
+              <span
+                className="absolute right-[10px] top-[6px] cursor-pointer coptbtn z-10"
+                onClick={showPassword}
+              >
+                <img
+                  className="w-[22px] z-10 invert"
+                  ref={ref}
+                  src="icons/eye.png"
+                  alt="PasswordShowToggle"
+                />
+              </span>
             </div>
-            <button
-              onClick={savePassword}
-              className="flex justify-center items-center gap-2 bg-blue-700 hover:bg-blue-500 rounded-full px-8 py-2 w-fit border cursor-pointer coptbtn border-blue-900 text-white"
-            >
-              <CiSaveDown1 size={20} strokeWidth={1} />
-              Save
-            </button>
           </div>
+          <button
+            onClick={savePassword}
+            className="flex justify-center items-center gap-2 bg-blue-700 hover:bg-blue-500 rounded-full px-8 py-2 w-fit border cursor-pointer coptbtn border-blue-900 text-white"
+          >
+            <CiSaveDown1 size={20} strokeWidth={1} />
+            Save
+          </button>
+        </div>
 
-          <div className="passwords">
-            <h2 className="font-bold text-2xl py-4 text-white">Your Passwords</h2>
-            {passwordArray.length === 0 && <div className="text-white"> No passwords to show</div>}
-            {passwordArray.length != 0 && (
+        <div className="passwords">
+          <h2 className="font-bold text-2xl py-4 text-white md:text-left text-center">
+            Your Passwords
+          </h2>
+          {passwordArray.length === 0 && (
+            <div className="text-white"> No passwords to show</div>
+          )}
+          {passwordArray.length != 0 && (
+            <div className="w-full overflow-x-auto">
               <table className="table-auto w-full rounded-md overflow-hidden mb-10">
                 <thead className="bg-blue-800 text-white">
                   <tr>
@@ -300,10 +305,11 @@ const Manager = () => {
                     );
                   })}
                 </tbody>
-              </table>
-            )}
-          </div>
+              </table>{" "}
+            </div>
+          )}
         </div>
+      </div>
     </>
   );
 };
