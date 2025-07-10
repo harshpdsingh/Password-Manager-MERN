@@ -26,7 +26,7 @@ const Login = () => {
 
   return (
     <div
-      className="bg-blue-100 min-h-screen"
+      className="bg-blue-100 min-h-screen flex flex-col justify-between"
       style={{
         backgroundImage: "url('/bg-image.webp')",
         backgroundRepeat: "no-repeat",
